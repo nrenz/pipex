@@ -6,7 +6,7 @@
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:59:20 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/02 14:45:42 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/04 15:53:59 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ int	main(int argc, char **argv, char **envp)
 	pipex->envp = envp;
 	if (!envp)
 		return (0);
-	pipex->splited_path = find_path(pipex);
-	// pipex->cmd = 
 	pipex->error = 0;
 	pipex->num_commands = argc - 3;
+	path_cmd_handling(pipex);
+	// printf("%s\n%s\n", pipex->cmd[0], pipex->cmd[1]);
+	return (0);
 }

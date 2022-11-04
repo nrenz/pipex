@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex_init.c                                       :+:      :+:    :+:   */
+/*   files_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:43:59 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/02 14:56:35 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/04 15:59:46 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,6 @@ void	open_outfile(t_pipex *pipex)
 		pipex->error = 3;
 }
 
-void	init_commands(t_pipex *pipex, int num)
-{
-	int	i;
-
-	
-}
-
-/* check commands */
 /* use the pipe function */
 /* how to execute commands */
 

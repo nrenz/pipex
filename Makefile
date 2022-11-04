@@ -6,12 +6,13 @@
 #    By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 11:26:42 by nrenz             #+#    #+#              #
-#    Updated: 2022/11/02 14:37:48 by nrenz            ###   ########.fr        #
+#    Updated: 2022/11/04 15:58:23 by nrenz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =	path_handling.c \
-		pipex_main.c \
+SRCS =	main.c \
+		path_handling.c \
+		files_init.c \
 		error_handling.c \
 
 OBJS = $(SRCS:.c=.o)
@@ -24,12 +25,13 @@ CFLAGS = -Wall -Wextra -Werror -I libft
 
 NAME = pipex
 
+all: libft_make $(NAME)
+
 libft_make: 
 	@make -C $(LIBFTDIR) 	
 
-all: libft_make $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(LIBFT)
 	@cp $(LIBFTDIR)$(LIBFT) $(LIBFT)
 	$(CC) $(CFLAGS) $(LIBFT) $(OBJS) -o $(NAME)
 
@@ -44,6 +46,6 @@ fclean: clean
 	make fclean -C libft
 	rm -f $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
 .PHONY: all clean fclean re
