@@ -6,14 +6,15 @@
 #    By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/31 11:26:42 by nrenz             #+#    #+#              #
-#    Updated: 2022/11/04 15:58:23 by nrenz            ###   ########.fr        #
+#    Updated: 2022/11/10 15:48:59 by nrenz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS =	main.c \
 		path_handling.c \
-		files_init.c \
+		files_handling.c \
 		error_handling.c \
+		process_handling.c \
 
 OBJS = $(SRCS:.c=.o)
 

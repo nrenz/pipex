@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex_main.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:59:20 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/04 15:53:59 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/11 14:41:48 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	main(int argc, char **argv, char **envp)
 		return (0);
 	pipex->error = 0;
 	pipex->num_commands = argc - 3;
-	path_cmd_handling(pipex);
+	init_files(pipex, argv);
 	// printf("%s\n%s\n", pipex->cmd[0], pipex->cmd[1]);
+	split_process(pipex);
 	return (0);
 }

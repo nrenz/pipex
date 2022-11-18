@@ -6,7 +6,7 @@
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:05:38 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/04 15:52:57 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/10 16:42:10 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ char	*find_cmd_path(char **splited_path, char *cmd)
 	{
 		tmp = ft_strjoin(splited_path[i], "/");
 		cmd_path = ft_strjoin(tmp, cmd);
-		printf("[%d]: %s\n", i, cmd_path);
 		free(tmp);
 		if (access(cmd_path, F_OK) == 0)
 			return (cmd_path);
@@ -86,44 +85,10 @@ char	**split_cmd_words(char *cmd)
 	return (splited_cmd);
 }
 
-char	**path_cmd_handling(t_pipex *pipex)
+char	**path_cmd_handling(t_pipex *pipex, int num)
 {
 	pipex->splited_path = find_path(pipex);
-	pipex->cmd = split_cmd_words(pipex->argv[2]);
+	pipex->cmd = split_cmd_words(pipex->argv[2 + num]);
+	pipex->cmd_path = find_cmd_path(pipex->splited_path, pipex->cmd[0 + num]);
 	return (NULL);
 }
-
-// int	main(void)
-// {
-// 	char	**res;
-// 	int		num = 0;
-// 	char	*cmd_path = find_cmd_path(splited_path, cmd);
-
-// 	res = get_cmd(cmd_path, num);
-// 	return (0);
-// }
-
-// void	free_pipex(t_pipex *pipex)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (pipex->path[i])
-// 		free(pipex->path[i++]);
-// 	free(pipex->path);
-// 	i = 0;
-// 	free(pipex);
-// }
-
-// int	main(int argc, char **argv, char **envp)
-// {
-// 	t_pipex	pipex;
-// 	pipex.envp = envp;
-// 	char	*res;
-// 	(void) argc;
-// 	(void) argv;	
-
-// 	res = *find_path(&pipex);
-// 	printf("%s\n", res);
-// 	return (0);
-// }

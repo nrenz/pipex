@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   files_init.c                                       :+:      :+:    :+:   */
+/*   files_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:43:59 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/04 15:59:46 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/18 15:17:17 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,9 @@ void	init_files(t_pipex *pipex, char **argv)
 	pipex->error = 0;
 	open_infile(pipex);
 	open_outfile(pipex);
+	// printf("%d\n, %d\n", pipex->fd_in, pipex->fd_out);
 	if (pipex->error)
-		error_handling_file(pipex);
+		error_handling(pipex);
 }
 
 /* 	check memory leaks */
@@ -53,15 +54,7 @@ void	open_outfile(t_pipex *pipex)
 		pipex->error = 3;
 }
 
-/* use the pipe function */
-/* how to execute commands */
-
-// int	main(int argc, char **argv)
+// int	main(void)
 // {
-// 	t_pipex	*pipex = (t_pipex *)calloc(1, sizeof(t_pipex));
-// 	pipex->argc = argc - 1;
-
-// 	if (argc == 5)
-// 		init_files(pipex, argv);
-// 	return (0);
+	
 // }
