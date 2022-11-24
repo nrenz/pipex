@@ -6,7 +6,7 @@
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:05:38 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/10 16:42:10 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/24 10:08:42 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,4 @@ char	**split_cmd_words(char *cmd)
 	if (cmd == NULL)
 		return (NULL);
 	return (splited_cmd);
-}
-
-char	**path_cmd_handling(t_pipex *pipex, int num)
-{
-	pipex->splited_path = find_path(pipex);
-	pipex->cmd = split_cmd_words(pipex->argv[2 + num]);
-	pipex->cmd_path = find_cmd_path(pipex->splited_path, pipex->cmd[0 + num]);
-	return (NULL);
 }
