@@ -6,7 +6,7 @@
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:59:20 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/24 10:15:37 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/24 10:21:35 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv, char **envp)
 		ft_putstr_fd("invalid number of arguments\n", 2);
 		return (1);
 	}
-	pipex = (t_pipex *)calloc(1, sizeof(t_pipex));
+	pipex = (t_pipex *)ft_calloc(1, sizeof(t_pipex));
 	if (!pipex)
 		return (1);
 	pipex->argc = argc;
