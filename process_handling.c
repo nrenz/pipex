@@ -6,7 +6,7 @@
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:49:34 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/24 10:18:50 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/25 13:50:30 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,6 @@ void	splitting_process(t_pipex *pipex)
 	pipex->error = WEXITSTATUS(status);
 }
 
-/* 	output of 1st cmd will redirected to pipe-beginning 
-	then will redirected to fd[0]
-	read-part will redirected to pipe-ending
-	after will redirected to fd_out */
 void	child(t_pipex *pipex, int num)
 {
 	if (num == 0)

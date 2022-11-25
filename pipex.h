@@ -6,7 +6,7 @@
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:44:27 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/24 10:16:08 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/25 13:50:03 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,10 @@
 # include <stdlib.h>
 # include <string.h>
 # include "libft/libft.h"
-/* include definitions for type t_pid */
 # include <sys/types.h>
-/* define the following symbolic constants for use with waitpid() */
 # include <sys/wait.h>
-/* header for functions open() */
 # include <fcntl.h>
-/* header für mode_t  */
 # include <sys/stat.h>
-/* header for pid */
 # include <sys/types.h>
 # include <sys/wait.h>
 
@@ -65,6 +60,7 @@ void	open_infile(t_pipex *pipex);
 void	open_outfile(t_pipex *pipex);
 
 /* error handling */
+void	error_args(void);
 void	error_files_handling(t_pipex *pipex);
 void	error_handler_pipe(t_pipex *pipex);
 void	error_splitting_process(t_pipex *pipex);

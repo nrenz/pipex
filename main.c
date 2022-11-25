@@ -6,7 +6,7 @@
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:59:20 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/24 10:21:35 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/25 13:15:39 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,8 @@ int	main(int argc, char **argv, char **envp)
 {
 	t_pipex	*pipex;
 
-	if (argc < 5)
-	{
-		ft_putstr_fd("invalid number of arguments\n", 2);
-		return (1);
-	}
+	if (argc < 5 || argc > 5)
+		error_args();
 	pipex = (t_pipex *)ft_calloc(1, sizeof(t_pipex));
 	if (!pipex)
 		return (1);
@@ -34,7 +31,11 @@ int	main(int argc, char **argv, char **envp)
 	init_files(pipex, argv);
 	if (pipe(pipex->pipe) == -1)
 		error_handler_pipe(pipex);
+	close(pipex->pipe[0]);
+	close(pipex->pipe[1]);
 	splitting_process(pipex);
+	close(pipex->fd_in);
+	close(pipex->fd_out);
 	free (pipex);
 	return (0);
 }

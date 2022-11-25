@@ -6,11 +6,17 @@
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 14:29:35 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/24 10:14:40 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/25 13:35:06 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
+
+void	error_args(void)
+{
+	ft_putstr_fd("pipex: invalid number of arguments\n", 2);
+	exit(1);
+}
 
 void	error_files_handling(t_pipex *pipex)
 {

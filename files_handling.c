@@ -6,7 +6,7 @@
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 13:43:59 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/24 10:15:16 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/25 13:49:30 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,6 @@ void	open_infile(t_pipex *pipex)
 	}
 }
 
-/* 	0644 rights: 
-	User: read & write
-	Group: read
-	Other: read */
 void	open_outfile(t_pipex *pipex)
 {
 	pipex->outfile = pipex->argv[pipex->argc - 1];

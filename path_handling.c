@@ -6,7 +6,7 @@
 /*   By: nrenz <nrenz@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:05:38 by nrenz             #+#    #+#             */
-/*   Updated: 2022/11/24 10:08:42 by nrenz            ###   ########.fr       */
+/*   Updated: 2022/11/25 13:49:44 by nrenz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ char	**split_path(char *trimmed_path)
 	return (splited_path);
 }
 
-/* if found "path=" put in path_string, trim and split the path_string */
 char	**find_path(t_pipex *pipex)
 {
 	int		i;
